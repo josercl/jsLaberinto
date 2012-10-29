@@ -112,7 +112,7 @@ function dibujarCamino(camino){
 			col_nodo=(nodo.numero%cols) * TAMANO_CELDA;
 					
 			var cuadrito=canvas.rect(col_nodo,fila_nodo,TAMANO_CELDA,TAMANO_CELDA).attr({
-				"fill":"#00dd00","stroke-width":"0"
+				"fill":"#00dd00","stroke-width":"0","stroke-opacity": "0","stroke": "#00dd00"
 			}).toBack();
 			
 			linea_resultado.push(cuadrito);
