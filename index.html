@@ -1,0 +1,33 @@
+<html>
+	<head>
+	<title>Laberinto</title>
+	</head>
+	<body>
+	Filas: <input type="text" id="filas" value="5">
+	Cols: <input type="text" id="cols" value="5">
+    <button id="generar" type="button" onClick="generacion()">Generar</button>
+    <button id="generar" type="button" onClick="resolver()">Resolver</button>
+    <button id="parar" type="button" onClick="pausa=!pausa">Parar / Continuar</button>
+
+	<div id="laberinto"></div>
+
+	<script src="raphael.js"></script>
+	<script src="jsLaberinto.js"></script>
+	<script>
+	var casillas;
+	
+	function generacion(){
+		casillas=generar();
+		dibujar(casillas);
+	}
+    
+	function resolver(){
+		var primera=casillas[0];
+		var ultima=casillas[casillas.length-1];
+		var res=DFS(ultima,primera);
+		
+		dibujarCamino(res);
+	}
+	</script>
+	</body>
+</html>
